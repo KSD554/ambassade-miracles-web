@@ -66,21 +66,21 @@ const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6">
             Contactez-Nous
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Nous serions ravis de vous accueillir dans notre communauté. 
             N'hésitez pas à nous contacter pour toute question ou demande de prière.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <Card className="border-none shadow-elegant">
             <CardHeader>
-              <CardTitle className="text-2xl text-primary flex items-center space-x-2">
-                <Mail className="h-6 w-6" />
+              <CardTitle className="text-xl sm:text-2xl text-primary flex items-center space-x-2">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span>Envoyez-nous un message</span>
               </CardTitle>
             </CardHeader>
@@ -136,18 +136,18 @@ const Contact = () => {
             {/* Contact Details */}
             <Card className="border-none shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Informations de Contact</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl text-primary">Informations de Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0`}>
-                      <info.icon className="h-6 w-6 text-primary-foreground" />
+                  <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0`}>
+                      <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
+                      <h4 className="font-semibold text-primary mb-1 text-sm sm:text-base">{info.title}</h4>
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className={`text-sm ${info.color}`}>{detail}</p>
+                        <p key={idx} className={`text-xs sm:text-sm ${info.color}`}>{detail}</p>
                       ))}
                     </div>
                   </div>
@@ -158,19 +158,19 @@ const Contact = () => {
             {/* Schedule */}
             <Card className="border-none shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary flex items-center space-x-2">
-                  <Clock className="h-6 w-6" />
+                <CardTitle className="text-xl sm:text-2xl text-primary flex items-center space-x-2">
+                  <Clock className="h-5 w-5 sm:h-6 sm:w-6" />
                   <span>Horaires des Cultes</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4">
                 {schedules.map((schedule, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg">
+                  <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-secondary/50 rounded-lg space-y-1 sm:space-y-0">
                     <div>
-                      <p className="font-semibold text-primary">{schedule.day}</p>
-                      <p className="text-sm text-muted-foreground">{schedule.type}</p>
+                      <p className="font-semibold text-primary text-sm sm:text-base">{schedule.day}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{schedule.type}</p>
                     </div>
-                    <p className="text-gold font-semibold">{schedule.time}</p>
+                    <p className="text-gold font-semibold text-sm sm:text-base">{schedule.time}</p>
                   </div>
                 ))}
               </CardContent>
@@ -179,16 +179,16 @@ const Contact = () => {
             {/* Google Maps Placeholder */}
             <Card className="border-none shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Localisation</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl text-primary">Localisation</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-secondary/50 rounded-lg p-8 text-center">
-                  <MapPin className="h-12 w-12 text-gold mx-auto mb-4" />
-                  <p className="text-primary font-semibold mb-2">Cocody, Attoban</p>
-                  <p className="text-sm text-muted-foreground">
+                <div className="bg-secondary/50 rounded-lg p-6 sm:p-8 text-center">
+                  <MapPin className="h-10 w-10 sm:h-12 sm:w-12 text-gold mx-auto mb-4" />
+                  <p className="text-primary font-semibold mb-2 text-sm sm:text-base">Cocody, Attoban</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                     Derrière le commissariat du 30ème arrondissement, près de la CGRAE
                   </p>
-                  <Button variant="outline" className="mt-4">
+                  <Button variant="outline" className="text-sm">
                     Voir sur Google Maps
                   </Button>
                 </div>

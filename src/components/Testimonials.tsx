@@ -79,26 +79,26 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6">
             Témoignages & Foire Aux Questions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Découvrez comment Dieu transforme les vies dans notre communauté 
             et trouvez les réponses à vos questions.
           </p>
         </div>
 
         {/* Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
           {stats.map((stat, index) => (
             <Card key={index} className="border-none shadow-elegant text-center hover:shadow-gold transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="h-8 w-8 text-primary-foreground" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-3xl font-bold text-primary mb-2">{stat.number}</h3>
-                <p className="font-semibold text-primary mb-2">{stat.label}</p>
-                <p className="text-sm text-muted-foreground">{stat.description}</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">{stat.number}</h3>
+                <p className="font-semibold text-primary mb-1 sm:mb-2 text-sm sm:text-base">{stat.label}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">{stat.description}</p>
               </CardContent>
             </Card>
           ))}
