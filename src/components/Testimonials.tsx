@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote, Users, TrendingUp, Heart, Shield } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Star, Quote, Users, TrendingUp, Heart, Shield, Cross, Sparkles, MapPin, Phone, Globe, Mail, CheckCircle } from "lucide-react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -58,20 +59,29 @@ const Testimonials = () => {
 
   const faqs = [
     {
-      question: "Quels sont les horaires des cultes ?",
-      answer: "Mercredis, Jeudis, Vendredis : 17H00-21H00 | Dimanches : 08H00-11H00"
+      icon: Cross,
+      question: "Qui est l'Église Ambassade des Miracles et quelle est sa mission ?",
+      answer: "L'Église Ambassade des Miracles est une organisation religieuse située à Cocody, Abidjan. Sa mission est de bâtir des vies, impacter des générations et manifester la gloire de Dieu à travers la foi, la prière et le service communautaire."
     },
     {
-      question: "Y a-t-il un service de transport ?",
-      answer: "Oui, nous proposons un transport gratuit. Appelez le +225 0596 085 951 pour plus d'informations."
+      icon: Heart,
+      question: "Quels sont les services, cultes et activités proposés et à quels horaires ?",
+      answer: "Nous organisons des cultes dominicaux, des veillées de prière, des réunions d'intercession, ainsi que des programmes pour les jeunes et des actions sociales. Horaires détaillés disponibles dans la section Services."
     },
     {
-      question: "Où se trouve l'église exactement ?",
-      answer: "Cocody, Attoban derrière le commissariat du 30ème arrondissement, près de la CGRAE, Abidjan."
+      icon: Users,
+      question: "Comment puis-je participer ou rejoindre la communauté ?",
+      answer: "Vous pouvez assister à nos cultes en présentiel, vous inscrire à nos programmes via le formulaire en ligne, ou nous rejoindre sur nos réseaux sociaux pour rester connecté."
     },
     {
-      question: "Comment participer aux 5 semaines de prières ?",
-      answer: "Rejoignez-nous du 03 septembre au 05 octobre 2025. Aucune inscription préalable requise."
+      icon: MapPin,
+      question: "Comment puis-je contacter l'église (adresse, téléphone, formulaire) ?",
+      answer: "📍 Adresse : Cocody, Attoban derrière le commissariat du 30ème arrondissement près de la CGRAE, Cocody, Abidjan, Côte d'Ivoire\n📞 Téléphone : 0759200200 / +225 59 20 02 00\n🌐 Site web : bishopomi.org\n📩 Formulaire de contact disponible dans la section Contact."
+    },
+    {
+      icon: CheckCircle,
+      question: "Quelles preuves ou témoignages montrent l'impact réel de cette église ?",
+      answer: "L'église est recommandée par 92 % des fidèles (273 avis). De nombreux témoignages illustrent des vies transformées, des miracles vécus et une forte dynamique communautaire."
     }
   ];
 
@@ -130,18 +140,61 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* FAQ */}
+        {/* FAQ Interactive */}
         <div>
-          <h3 className="text-3xl font-bold text-primary text-center mb-8">Questions Fréquentes</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="border-none shadow-elegant">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold text-primary mb-3">{faq.question}</h4>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6 animate-pulse">
+              <Sparkles className="h-8 w-8 text-primary-foreground" />
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Questions Fréquentes
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez tout ce que vous devez savoir sur notre église et notre communauté spirituelle
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`} 
+                  className="border border-primary/20 rounded-xl bg-card/50 backdrop-blur-sm shadow-elegant hover:shadow-gold transition-all duration-300 overflow-hidden group"
+                >
+                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group-hover:bg-primary/5 transition-all duration-300">
+                    <div className="flex items-center gap-4 w-full">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <faq.icon className="h-6 w-6 text-primary-foreground" />
+                      </div>
+                      <span className="font-semibold text-primary text-base sm:text-lg pr-4">
+                        {faq.question}
+                      </span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 text-muted-foreground">
+                    <div className="pl-16 prose prose-sm max-w-none">
+                      {faq.answer.split('\n').map((line, lineIndex) => (
+                        <p key={lineIndex} className="mb-2 last:mb-0">
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Decorative elements */}
+          <div className="flex justify-center mt-12">
+            <div className="flex items-center gap-2 text-gold opacity-70">
+              <Cross className="h-4 w-4" />
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+              <Sparkles className="h-4 w-4" />
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+              <Cross className="h-4 w-4" />
+            </div>
           </div>
         </div>
       </div>
