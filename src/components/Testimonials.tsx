@@ -140,60 +140,130 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* FAQ Interactive */}
-        <div>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6 animate-pulse">
-              <Sparkles className="h-8 w-8 text-primary-foreground" />
-            </div>
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              Questions Fréquentes
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez tout ce que vous devez savoir sur notre église et notre communauté spirituelle
-            </p>
+        {/* FAQ Revolutionary Design */}
+        <div className="relative">
+          {/* Animated Background Particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold rounded-full animate-pulse opacity-40"></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-primary rounded-full animate-ping opacity-30"></div>
+            <div className="absolute top-1/2 left-1/3 w-1.5 h-1.5 bg-gold rounded-full animate-bounce opacity-50"></div>
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full animate-pulse opacity-40"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+          <div className="text-center mb-16 relative z-10">
+            {/* Floating Icon with Orbital Elements */}
+            <div className="relative inline-flex items-center justify-center w-24 h-24 mb-8">
+              <div className="absolute inset-0 bg-gradient-primary rounded-full animate-spin opacity-20" style={{animationDuration: '8s'}}></div>
+              <div className="absolute inset-2 bg-gradient-primary rounded-full animate-spin opacity-30" style={{animationDuration: '6s', animationDirection: 'reverse'}}></div>
+              <div className="relative w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold group hover:scale-110 transition-all duration-500">
+                <Sparkles className="h-8 w-8 text-primary-foreground animate-pulse" />
+                {/* Orbital dots */}
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full animate-bounce"></div>
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-gold rounded-full animate-ping"></div>
+              </div>
+            </div>
+
+            <h3 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-gold to-primary bg-clip-text text-transparent mb-6 animate-fade-in">
+              Questions Divines
+            </h3>
+            <div className="relative">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Explorez les mystères de notre communauté spirituelle à travers une expérience interactive révolutionnaire
+              </p>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent animate-pulse"></div>
+            </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto relative">
+            {/* Mystical Connection Lines */}
+            <div className="absolute left-8 top-16 bottom-16 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden lg:block"></div>
+            
+            <Accordion type="single" collapsible className="space-y-8">
               {faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`} 
-                  className="border border-primary/20 rounded-xl bg-card/50 backdrop-blur-sm shadow-elegant hover:shadow-gold transition-all duration-300 overflow-hidden group"
+                  className="relative group border-none"
                 >
-                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group-hover:bg-primary/5 transition-all duration-300">
-                    <div className="flex items-center gap-4 w-full">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <faq.icon className="h-6 w-6 text-primary-foreground" />
+                  {/* Mystical Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-gold/5 to-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl"></div>
+                  
+                  {/* Main Card */}
+                  <div className="relative bg-card/80 backdrop-blur-lg border border-primary/10 rounded-2xl shadow-elegant hover:shadow-gold transition-all duration-500 overflow-hidden group-hover:scale-[1.02] group-hover:border-gold/30">
+                    {/* Animated Border Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    
+                    <AccordionTrigger className="px-8 py-6 text-left hover:no-underline group/trigger">
+                      <div className="flex items-center gap-6 w-full">
+                        {/* Revolutionary Icon Design */}
+                        <div className="relative">
+                          <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover/trigger:rotate-12 transition-all duration-500 shadow-lg">
+                            <faq.icon className="h-8 w-8 text-primary-foreground group-hover/trigger:scale-110 transition-transform duration-300" />
+                          </div>
+                          {/* Orbiting Micro Elements */}
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-gold rounded-full opacity-0 group-hover/trigger:opacity-100 group-hover/trigger:animate-bounce transition-all duration-300"></div>
+                          <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-0 group-hover/trigger:opacity-100 group-hover/trigger:animate-ping transition-all duration-500"></div>
+                        </div>
+                        
+                        {/* Question Text with Gradient */}
+                        <div className="flex-1 pr-4">
+                          <span className="font-bold text-lg sm:text-xl bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent group-hover/trigger:from-gold group-hover/trigger:to-primary transition-all duration-500">
+                            {faq.question}
+                          </span>
+                          <div className="w-0 h-0.5 bg-gradient-to-r from-gold to-primary group-hover/trigger:w-full transition-all duration-700 mt-2"></div>
+                        </div>
                       </div>
-                      <span className="font-semibold text-primary text-base sm:text-lg pr-4">
-                        {faq.question}
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6 text-muted-foreground">
-                    <div className="pl-16 prose prose-sm max-w-none">
-                      {faq.answer.split('\n').map((line, lineIndex) => (
-                        <p key={lineIndex} className="mb-2 last:mb-0">
-                          {line}
-                        </p>
-                      ))}
-                    </div>
-                  </AccordionContent>
+                    </AccordionTrigger>
+                    
+                    <AccordionContent className="px-8 pb-8">
+                      {/* Answer with Enhanced Typography */}
+                      <div className="pl-22 relative">
+                        {/* Decorative Quote Mark */}
+                        <div className="absolute -left-16 -top-2 text-6xl text-gold/20 font-serif">"</div>
+                        
+                        <div className="prose prose-lg max-w-none text-muted-foreground/90 leading-relaxed">
+                          {faq.answer.split('\n').map((line, lineIndex) => (
+                            <p key={lineIndex} className="mb-3 last:mb-0 group-hover:text-muted-foreground transition-colors duration-300">
+                              {line}
+                            </p>
+                          ))}
+                        </div>
+                        
+                        {/* Decorative Bottom Element */}
+                        <div className="flex items-center gap-2 mt-6 opacity-60">
+                          <div className="w-8 h-px bg-gradient-to-r from-gold to-transparent"></div>
+                          <Cross className="h-3 w-3 text-gold" />
+                          <div className="w-8 h-px bg-gradient-to-l from-gold to-transparent"></div>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </div>
+                  
+                  {/* Connection Node for Desktop */}
+                  <div className="absolute left-8 top-1/2 w-3 h-3 bg-gradient-primary rounded-full transform -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden lg:block shadow-lg"></div>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
 
-          {/* Decorative elements */}
-          <div className="flex justify-center mt-12">
-            <div className="flex items-center gap-2 text-gold opacity-70">
-              <Cross className="h-4 w-4" />
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-              <Sparkles className="h-4 w-4" />
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-              <Cross className="h-4 w-4" />
+          {/* Mystical Footer Decoration */}
+          <div className="flex justify-center mt-16 relative">
+            <div className="flex items-center gap-4 opacity-60">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-primary to-gold animate-pulse"></div>
+              <div className="relative">
+                <Cross className="h-6 w-6 text-primary animate-pulse" />
+                <div className="absolute inset-0 animate-ping">
+                  <Cross className="h-6 w-6 text-gold opacity-20" />
+                </div>
+              </div>
+              <Sparkles className="h-5 w-5 text-gold animate-bounce" />
+              <div className="relative">
+                <Cross className="h-6 w-6 text-primary animate-pulse" style={{animationDelay: '0.5s'}} />
+                <div className="absolute inset-0 animate-ping" style={{animationDelay: '0.5s'}}>
+                  <Cross className="h-6 w-6 text-gold opacity-20" />
+                </div>
+              </div>
+              <div className="w-16 h-px bg-gradient-to-l from-transparent via-primary to-gold animate-pulse"></div>
             </div>
           </div>
         </div>
